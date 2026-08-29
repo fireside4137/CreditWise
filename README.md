@@ -69,12 +69,23 @@ CreditWise/
 
 Visualizations generated in the notebook:
 
-- **Pie chart** — Class balance of `Loan_Approved` (Yes vs No distribution).
-- **Bar chart** — Distribution of `Education_Level`.
-- **Histograms** — Distribution of `Applicant_Income` and `Coapplicant_Income`.
-- **Box plots** — Outlier analysis for `Applicant_Income`, `Credit_Score`, `DTI_Ratio`, `Savings`, `Age`, and `Loan_Amount` grouped by loan approval status.
-- **Stacked histograms** — `Credit_Score` and `Applicant_Income` segmented by `Loan_Approved`.
-- **Correlation heatmap** — Pairwise linear correlations across all numerical features post-encoding.
+#### Target Variable Distribution
+The dataset exhibits a ~70/30 class imbalance, highlighting the necessity to optimize for Precision over raw Accuracy.
+![Loan Approval Imbalance](./charts%20and%20graphs/LoanApprovalPercentage_piechart.png)
+
+#### Credit Score impact on Loan Approval
+Higher credit scores heavily skew towards approved loans, as seen in the distribution below:
+![Credit Score vs Approval](./charts%20and%20graphs/Applicant_count_CreditScore_LoanApproval_hue.png)
+
+#### Feature Distribution & Outlier Analysis
+Box plots generated for all continuous numeric features to identify skewness and outliers prior to StandardScaler normalization:
+![Box Plots](./charts%20and%20graphs/Box_plots.png)
+
+#### Feature Correlation Heatmap
+Pearson correlation matrix identifying collinearity and top predictive signals (e.g. `Credit_Score_sq` and `DTI_Ratio_sq`).
+![Correlation Heatmap](./charts%20and%20graphs/creditwise_heatmap.png)
+
+*Other visualizations explored in the notebook include `Education_Level` bar charts, `Income` histograms, and stacked distributions.*
 
 ### 3. 🔢 Encoding
 
